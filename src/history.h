@@ -28,7 +28,7 @@ char *get_history(List *list, int id);
 / *Print the entire contents of the list. */
 void print_history(List *list);
 
-/ *Free the history list and the strings it references. */
+/* Free the history list and the strings it references. */
 void free_history(List *list);
 
 #endif
