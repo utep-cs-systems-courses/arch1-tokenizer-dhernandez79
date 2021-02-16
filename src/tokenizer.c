@@ -5,13 +5,17 @@
    Zero terminators are not printable (therefore false) */
 
 int space_char(char c) {
+  if (c == ' ' || c == '\t') {
 
+    return 1;
 
+  }
 
-  (c == ' '||c == '\t') ? return 1:return 0;
+  else {
 
+    return 0;
 
-
+  }
 }//end space char
 
 
@@ -26,12 +30,17 @@ int space_char(char c) {
 
 int non_space_char(char c) {
 
+  if (c != ' ' && c != '\t') {
 
+    return 1;
 
-  (c != ' ' && c != '\t') ? return 1:return 0;
+  }
 
+  else {
 
+    return 0;
 
+  }
 }//end non_space_char
 
 
