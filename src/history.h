@@ -25,7 +25,7 @@ void add_history(List *list, char *str);
    int id - the id of the Item to find */
 char *get_history(List *list, int id);
 
-/ *Print the entire contents of the list. */
+/*Print the entire contents of the list. */
 void print_history(List *list);
 
 /* Free the history list and the strings it references. */
