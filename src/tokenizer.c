@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "tokenizer.h"
+
 
 /*Returns 1 if char is a space */
 int space_char(char c) {
@@ -114,3 +116,12 @@ void print_tokens(char **tokens) {
     printf("%s\n",tokens[i]);
   }
 }//end print_tokens method
+
+
+void free_tokens(char **tokens) {
+  int i;
+  for (i = 0; tokens[i] != '\0'; i++) {
+    free(tokens[i]);
+  }
+  free(tokens);
+}//end free_tokens
