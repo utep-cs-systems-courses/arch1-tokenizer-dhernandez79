@@ -19,13 +19,13 @@ List *init_history() {
 void add_history(List *list, char *str) {
   Item *temp = list->root;
   int counter = 1;
-  while(temp->next != NULL) {
+  while(temp->next != 0) {
     temp = temp->next;
     counter++;
   }
-  temp->str = str;
-  temp->id = counter;
   temp->next = malloc(sizeof(Item));
+  temp->next->str = copy_str(str, string_length(str));
+  temp->next->id = counter;
 }
 
 
@@ -34,20 +34,21 @@ void add_history(List *list, char *str) {
    int id - the id of the Item to find */
 char *get_history(List *list, int id) {
   Item *temp = list->root;
-  while(temp != NULL) {
+  while(temp != 0) {
     if (temp->id == id) {
       return temp->str;
     }
-    temp = temp->next
+    temp = temp->next;
   }
+  return "id not found";
 }
 
 
 /*Print the entire contents of the list. */
 void print_history(List *list) {
-  Item *temp = list->root;
-  while(temp->next != NULL) {
-    printf("%s\n",temp->str);
+  Item *temp = list->root->next;
+  while(temp != 0) {
+    printf("%d.%s\n",temp->id,temp->str);
     temp = temp->next;
   }
 }
