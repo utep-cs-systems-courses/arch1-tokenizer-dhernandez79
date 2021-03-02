@@ -1,7 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "tokenizer.h"
 
+short string_length(char *str) {
+  int counter = 0;
+  while (*str){
+    counter++;
+    str++;
+  }
+  return counter;
+}
 
 /*Returns 1 if char is a space */
 int space_char(char c) {
@@ -120,7 +127,7 @@ void print_tokens(char **tokens) {
 
 void free_tokens(char **tokens) {
   int i;
-  for (i = 0; tokens[i] != '\0'; i++) {
+  for (i = 0; tokens[i] != 0; i++) {
     free(tokens[i]);
   }
   free(tokens);
